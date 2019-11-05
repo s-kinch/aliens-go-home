@@ -1,11 +1,20 @@
-import React from 'react';
+import React from 'react'
+import { connect } from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      AAAAY
-    </div>
-  );
+function App({message}) {
+    return (
+        <div className="App">
+            {message}
+        </div>
+    )
 }
 
-export default App;
+const mapStateToProps = state => ({
+    message: state.message,
+})
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
